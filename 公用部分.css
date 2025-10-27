@@ -29,7 +29,7 @@ html {
 
 /* 头部 */
 .header {
-  background: url(./11.jpg) no-repeat center/cover;
+  background: url(./88.jpg) no-repeat center/cover;
   height: 300px;
   padding: 15px 20px;
   text-align: center;
@@ -87,18 +87,19 @@ html {
 .footer {
   height: 300px;
   background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
 }
 
 /* 关于网页 */
-.service {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 60px;
-}
-
 .service-left {
   display: flex;
   gap: 84px;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .service-left dt {
@@ -111,7 +112,12 @@ html {
 }
 
 .service-left dd a {
-  color: #969696;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.service-left dd a:hover {
+  color: #5EB69C;
 }
 
 .service-left dd a i {
@@ -121,11 +127,15 @@ html {
 /* 版权模块 */
 .copyright {
   text-align: center;
-  margin-top: 100px;
   line-height: 30px;
   color: #A1A1A1;
 }
 
 .copyright a {
   color: #A1A1A1;
+  transition: color 0.3s ease;
+}
+
+.copyright a:hover {
+  color: #5EB69C;
 }
