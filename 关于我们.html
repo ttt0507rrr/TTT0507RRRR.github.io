@@ -32,8 +32,19 @@
   <!-- 中部制作 -->
   <div class="content">
     <div class="left">
-      <h2>关于我们</h2>
-      <p>Hello,这是一个人!!!</p>
+      <div class="profile-section">
+        <h2>关于我们</h2>
+        <div class="profile-info">
+          <p class="greeting">Hello, 欢迎来到我的个人网页!</p>
+          <p class="name">我是TQR</p>
+          <p class="title">前端开发学习者</p>
+          <div class="profile-details">
+            <p><strong>爱好：</strong>编程、音乐、阅读</p>
+            <p><strong>目标：</strong>成为优秀的全栈开发者</p>
+            <p><strong>座右铭：</strong>看nt是一辈子的事情</p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="right">
       <div class="tech-stack">
@@ -112,9 +123,75 @@
             <div class="skill-percent">8%</div>
           </div>
         </div>
+
+        <!-- 个人经历 -->
+        <div class="experience-section">
+          <h3>个人经历</h3>
+          <div class="experience-timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2025 - 至今</div>
+              <div class="timeline-content">
+                <h4>前端开发学习</h4>
+                <p>系统学习HTML、CSS、JavaScript、Vue等前端技术栈，持续提升编程技能</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2024 - 2025</div>
+              <div class="timeline-content">
+                <h4>计算机基础学习</h4>
+                <p>学习计算机基础知识，包括数据结构、算法、计算机网络等</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 项目经验 -->
+        <div class="projects-section">
+          <h3>项目经验</h3>
+          <div class="projects-grid">
+            <div class="project-card">
+              <h4>个人网页</h4>
+              <p>使用HTML、CSS、JavaScript开发的个人展示网站，包含首页、开发日志和关于我们等页面</p>
+              <div class="project-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+            <div class="project-card">
+              <h4>技能展示墙</h4>
+              <p>使用CSS Grid和Flexbox实现的响应式技能展示组件，展示个人技术栈和掌握程度</p>
+              <div class="project-tags">
+                <span>CSS3</span>
+                <span>响应式设计</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 个人爱好 -->
+        <div class="hobbies-section">
+          <h3>个人爱好</h3>
+          <div class="hobbies-container">
+            <div class="hobby-item">
+              <div class="hobby-icon">📚</div>
+              <div class="hobby-name">阅读</div>
+              <p>喜欢阅读技术书籍和科幻小说，拓宽视野</p>
+            </div>
+            <div class="hobby-item">
+              <div class="hobby-icon">🎵</div>
+              <div class="hobby-name">音乐</div>
+              <p>闲暇时喜欢听音乐、学习乐器，放松心情</p>
+            </div>
+            <div class="hobby-item">
+              <div class="hobby-icon">💻</div>
+              <div class="hobby-name">编程</div>
+              <p>热爱编程，享受解决问题的乐趣</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 
 
@@ -128,15 +205,19 @@
       <div class="service-left">
         <dl>
           <dt>关于网页</dt>
-          <dd><a href="./index.html">首页</a></dd>
-          <dd><a href="./开发日志.html">开发日志</a></dd>
-          <dd><a href="./关于我们.html">关于我们</a></dd>
+          <dd style="display: flex; gap: 10px; align-items: center;">
+            <a href="./index.html">首页</a>
+            <span>/</span>
+            <a href="./开发日志.html">开发日志</a>
+            <span>/</span>
+            <a href="./关于我们.html">关于我们</a>
+          </dd>
         </dl>
-        <dl>
+        <!-- <dl>
           <dt>个人信息</dt>
           <dd>电话1234567</dd>
           <dd>邮箱1234567@qq.com</dd>
-        </dl>
+        </dl> -->
       </div>
       <div class="copyright">
         <p>

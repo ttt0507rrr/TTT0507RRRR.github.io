@@ -97,14 +97,18 @@ html {
 /* 关于网页 */
 .service-left {
   display: flex;
+  /* flex-direction: row; */
   gap: 84px;
   justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .service-left dt {
-  font-size: 18px;
+  font-size: 30px;
   margin-bottom: 30px;
+
 }
 
 .service-left dd {
@@ -114,6 +118,7 @@ html {
 .service-left dd a {
   color: black;
   transition: color 0.3s ease;
+  font-size: 20px;
 }
 
 .service-left dd a:hover {

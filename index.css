@@ -68,6 +68,7 @@ html {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   min-height: 400px;
+  text-align: center;
 }
 
 /* 爱好部分 - 占1/2宽度 */
@@ -79,6 +80,9 @@ html {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   min-height: 400px;
+  text-align: center;
+  margin: 0 auto;
+  /* line-height: 1.5; */
 }
 
 /* 标题样式 */
