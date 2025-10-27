@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开发日志</title>
+  <link rel="stylesheet" href="./公用部分.css">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./关于我们.css">
+</head>
+
+<body>
+  <div class="back">返回顶部</div>
+  <!-- 头部 -->
+  <div class="header">
+    <p>欢迎来到关于我们</p>
+  </div>
+  <div class="shortcut">
+    <div class="w">
+      <ul>
+        <li><a href="./index.html">首页</a></li>
+        <li class="line"></li>
+        <li><a href="./开发日志.html">开发日志</a></li>
+        <li class="line"></li>
+        <li><a href="./关于我们.html">关于我们</a></li>
+        <li class="line"></li>
+        <li><a href="#">我的作品</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- 中部制作 -->
+  <div class="content">
+    <div class="left">
+      <h2>关于我们</h2>
+      <p>Hello,这是一个人!!!</p>
+    </div>
+    <div class="right">
+      <div class="tech-stack">
+        <h3>技能墙</h3>
+        <div class="skills-container">
+          <div class="skill-card">
+            <div class="skill-icon">V</div>
+            <div class="skill-name">Vue 3</div>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 9%"></div>
+            </div>
+            <div class="skill-percent">9%</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">JS</div>
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 50%"></div>
+            </div>
+            <div class="skill-percent">50%</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">H5</div>
+            <div class="skill-name">HTML5</div>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 60%"></div>
+            </div>
+            <div class="skill-percent">60%</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">C3</div>
+            <div class="skill-name">CSS3</div>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 5%"></div>
+            </div>
+            <div class="skill-percent">5%</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">Py</div>
+            <div class="skill-name">Python</div>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 20%"></div>
+            </div>
+            <div class="skill-percent">20%</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">C#</div>
+            <div class="skill-name">C#</div>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 30%"></div>
+            </div>
+            <div class="skill-percent">30%</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">Fl</div>
+            <div class="skill-name">Flask</div>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 5%"></div>
+            </div>
+            <div class="skill-percent">5%</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">My</div>
+            <div class="skill-name">MySQL</div>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 8%"></div>
+            </div>
+            <div class="skill-percent">8%</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">No</div>
+            <div class="skill-name">Node.js</div>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 8%"></div>
+            </div>
+            <div class="skill-percent">8%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+  <!-- 底部 -->
+  <footer class="footer">
+    <div class="w">
+      <!-- 口号模块 -->
+      <div class="service-left">
+        <dl>
+          <dt>关于网页</dt>
+          <dd><a href="#">首页</a></dd>
+          <dd><a href="#">开发日志</a></dd>
+          <dd><a href="#">关于我们</a></dd>
+        </dl>
+        <dl>
+          <dt>个人信息</dt>
+          <dd><a href="#">电话1234567</a></dd>
+          <dd><a href="#">邮箱1234567@qq.com</a></dd>
+        </dl>
+      </div>
+      <div class="copyright">
+        <p>
+          <a href="#">关于我们</a> |
+          <a href="#">联系我们</a>
+          <a href="#">方式：1234567.com</a>
+        </p>
+        <p>tqr个人网页</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // 获取返回顶部按钮元素
+    const backBtn = document.querySelector('.back');
+
+    // 添加点击事件监听器
+    backBtn.addEventListener('click', function () {
+      // 平滑滚动到页面顶部
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // 可选：添加滚动显示/隐藏按钮的功能
+    window.addEventListener('scroll', function () {
+      // 当页面滚动超过300px时显示按钮
+      if (window.pageYOffset > 300) {
+        backBtn.style.display = 'block';
+      } else {
+        backBtn.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>

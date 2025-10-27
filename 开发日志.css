@@ -1,0 +1,151 @@
+.log {
+  background-color: #fff;
+  padding: 30px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.log .w {
+  position: relative;
+  min-height: 600px;
+}
+
+/* 竖着排列的标题 */
+.log .w h2 {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  padding: 15px 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  letter-spacing: 5px;
+}
+
+/* 容器布局 */
+.log-container {
+  margin-left: 80px;
+  display: flex;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+/* 左侧日志内容 */
+.log-content {
+  flex: 1;
+}
+
+/* 右侧问题内容 */
+.problems-content {
+  flex: 1;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.problems-content h3 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.problem-item {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.problem-item:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.problem-item h4 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.problem-item p {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* 日志内容样式 */
+.log-content {
+  flex: 1;
+  padding: 0 10px;
+}
+
+/* 日志盒子样式 */
+.log .w .box1,
+.log .w .box2,
+.log .w .box3,
+.log .w .box4,
+.log .w .box5 {
+  width: 100%;
+  min-height: 80px;
+  background-color: #f5f5f5;
+  margin: 20px 0;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.6;
+}
+
+.log .w .box1:hover,
+.log .w .box2:hover,
+.log .w .box3:hover,
+.log .w .box4:hover,
+.log .w .box5:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+
+/* 调整响应式布局 */
+@media (max-width: 768px) {
+  .log-container {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .log .w h2 {
+    position: relative;
+    transform: none;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .log {
+    padding: 20px 0;
+    margin: 15px 0;
+  }
+}

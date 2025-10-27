@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./公用部分.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<!-- 头部 -->
+
+<body>
+  <div class="back">返回顶部</div>
+  <!-- 头部 -->
+  <div class="header">
+    <p>欢迎来到我的首页</p>
+  </div>
+  <div class="shortcut">
+    <div class="w">
+      <ul>
+        <li><a href="./index.html">首页</a></li>
+        <li class="line"></li>
+        <li><a href="./开发日志.html">开发日志</a></li>
+        <li class="line"></li>
+        <li><a href="./关于我们.html">关于我们</a></li>
+        <li class="line"></li>
+        <li><a href="#">我的作品</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- 首页 -->
+  <div class="home">
+
+    <div class="home1">
+      <h2>个人介绍</h2>
+      <p>
+        姓名：汤青榕<br>
+        性别：女<br>
+        就读：湖南工商大学<br>
+        手机号：123456789<br>
+        邮箱：1234567@qq.com<br>
+        个人介绍：这是一个人。
+      </p>
+    </div>
+    <div class="home2">
+      <h2>个人技能</h2>
+      <p>
+        1. 会用HTML、CSS、JavaScript等前端技术开发网页。<br>
+        2. 有良好的用户体验设计能力，能够为用户提供良好的交互体验。<br>
+        3. 有良好的沟通能力和团队合作精神，能够与其他开发人员合作开发项目。<br>
+      </p>
+
+    </div>
+    <div class="home3">
+      <h2>兴趣爱好</h2>
+      <p>
+        1. 喜欢运动，尤其是足球。<br>
+        2. 喜欢旅游，尤其是去新的地方。<br>
+        3. 喜欢阅读，尤其是技术书籍。<br>
+      </p>
+
+    </div>
+  </div>
+  <!-- 底部 -->
+  <footer class="footer">
+    <div class="w">
+      <!-- 口号模块 -->
+      <div class="service-left">
+        <dl>
+          <dt>关于网页</dt>
+          <dd><a href="#">首页</a></dd>
+          <dd><a href="#">开发日志</a></dd>
+          <dd><a href="#">关于我们</a></dd>
+        </dl>
+        <dl>
+          <dt>个人信息</dt>
+          <dd><a href="#">电话1234567</a></dd>
+          <dd><a href="#">邮箱1234567@qq.com</a></dd>
+        </dl>
+      </div>
+      <div class="copyright">
+        <p>
+          <a href="#">关于我们</a> |
+          <a href="#">联系我们</a>
+          <a href="#">方式：1234567.com</a>
+        </p>
+        <p>tqr个人网页</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // 获取返回顶部按钮元素
+    const backBtn = document.querySelector('.back');
+
+    // 添加点击事件监听器
+    backBtn.addEventListener('click', function () {
+      // 平滑滚动到页面顶部
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // 可选：添加滚动显示/隐藏按钮的功能
+    window.addEventListener('scroll', function () {
+      // 当页面滚动超过300px时显示按钮
+      if (window.pageYOffset > 300) {
+        backBtn.style.display = 'block';
+      } else {
+        backBtn.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开发日志</title>
+  <link rel="stylesheet" href="./公用部分.css">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./开发日志.css">
+</head>
+
+<body>
+  <div class="back">返回顶部</div>
+  <!-- 头部 -->
+  <div class="header">
+    <p>欢迎来到我的开发日志</p>
+  </div>
+  <div class="shortcut">
+    <div class="w">
+      <ul>
+        <li><a href="./index.html">首页</a></li>
+        <li class="line"></li>
+
+        <li><a href="./开发日志.html">开发日志</a></li>
+        <li class="line"></li>
+        <li><a href="./关于我们.html">关于我们</a></li>
+        <li class="line"></li>
+        <li><a href="#">我的作品</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- 中部制作 -->
+  <div class="log">
+    <div class="w">
+      <h2>开发日志</h2>
+      <div class="log-container">
+        <div class="log-content">
+          <div class="box1">2025年10月23日：开始搭建个人网页</div>
+          <div class="box2">2025年10月24日：添加个人介绍模块</div>
+          <div class="box3">2025年10月25日：添加个人技能模块</div>
+          <div class="box4">2025年10月26日：添加兴趣爱好模块</div>
+          <div class="box5">2025年10月27日：添加联系我们模块</div>
+        </div>
+        <div class="problems-content">
+          <h3>开发中遇到的问题</h3>
+          <div class="problem-item">
+            <h4>问题1：CSS样式不生效</h4>
+            <p>解决方案：检查了CSS文件链接，发现路径错误，修正后样式正常显示。</p>
+          </div>
+          <div class="problem-item">
+            <h4>问题2：盒子没有边框</h4>
+            <p>解决方案：在CSS中添加了border属性，设置了合适的边框样式。</p>
+          </div>
+          <div class="problem-item">
+            <h4>问题3：页面布局不合理</h4>
+            <p>解决方案：重新设计了页面布局，采用左右分栏的方式展示内容。</p>
+          </div>
+          <div class="problem-item">
+            <h4>问题4：交互效果不明显</h4>
+            <p>解决方案：添加了hover动画效果，增强用户交互体验。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="w">
+      <!-- 口号模块 -->
+      <div class="service-left">
+        <dl>
+          <dt>关于网页</dt>
+          <dd><a href="#">首页</a></dd>
+          <dd><a href="#">开发日志</a></dd>
+          <dd><a href="#">关于我们</a></dd>
+        </dl>
+        <dl>
+          <dt>个人信息</dt>
+          <dd><a href="#">电话1234567</a></dd>
+          <dd><a href="#">邮箱1234567@qq.com</a></dd>
+        </dl>
+      </div>
+      <div class="copyright">
+        <p>
+          <a href="#">关于我们</a> |
+          <a href="#">联系我们</a>
+          <a href="#">方式：1234567.com</a>
+        </p>
+        <p>tqr个人网页</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // 获取返回顶部按钮元素
+    const backBtn = document.querySelector('.back');
+
+    // 添加点击事件监听器
+    backBtn.addEventListener('click', function () {
+      // 平滑滚动到页面顶部
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // 可选：添加滚动显示/隐藏按钮的功能
+    window.addEventListener('scroll', function () {
+      // 当页面滚动超过300px时显示按钮
+      if (window.pageYOffset > 300) {
+        backBtn.style.display = 'block';
+      } else {
+        backBtn.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.back {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  color: white;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: block;
+  /* 默认显示 */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back:hover {
+  background-color: #ccc;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 为home容器添加整体样式 */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 10px 20px;
+  margin-top: 5px;
+  perspective: 1000px;
+}
+
+/* 统一home1、home2、home3的样式 */
+.home .home1,
+.home .home2,
+.home .home3 {
+  width: 33%;
+  min-height: 600px;
+  margin: 0 auto;
+  background-color: #ccc;
+  border-radius: 30px;
+  color: #333;
+  padding: 30px;
+  box-sizing: border-box;
+  /* 增强的阴影效果 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  /* 添加过渡效果 */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* 3D效果 */
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 背景图设置 */
+.home .home1 {
+  background: url(./44.jpg) no-repeat center/cover;
+}
+
+.home .home2 {
+  background: url(./33.jpg) no-repeat center/cover;
+}
+
+.home .home3 {
+  background: url(./66.jpg) no-repeat center/cover;
+}
+
+/* 背景叠加层，增强文字可读性 */
+.home .home1::before,
+.home .home2::before,
+.home .home3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* 点击动画效果 */
+.home .home1:active,
+.home .home2:active,
+.home .home3:active {
+  transform: translateZ(20px) scale(0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 悬停效果 */
+.home .home1:hover,
+.home .home2:hover,
+.home .home3:hover {
+  transform: translateZ(30px) translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* 标题样式 */
+.home .home1 h2,
+.home .home2 h2,
+.home .home3 h2 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 5px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #fff;
+  padding: 50px 0;
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+/* 段落样式 */
+.home .home1 p,
+.home .home2 p,
+.home .home3 p {
+  text-align: center;
+  color: #fff;
+  font-size: 23px;
+  letter-spacing: 2px;
+  white-space: normal;
+  line-height: 1.8;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+/* 悬停时文字效果 */
+.home .home1:hover h2,
+.home .home2:hover h2,
+.home .home3:hover h2,
+.home .home1:hover p,
+.home .home2:hover p,
+.home .home3:hover p {
+  transform: translateZ(5px);
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home .home1,
+  .home .home2,
+  .home .home3 {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .home .home1,
+  .home .home2,
+  .home .home3 {
+    width: 95%;
+    min-height: 500px;
+    padding: 20px;
+  }
+
+  .home .home1 h2,
+  .home .home2 h2,
+  .home .home3 h2 {
+    font-size: 28px;
+    padding: 30px 0;
+  }
+
+  .home .home1 p,
+  .home .home2 p,
+  .home .home3 p {
+    font-size: 18px;
+  }
+}
