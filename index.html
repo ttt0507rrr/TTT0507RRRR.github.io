@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <title>首页</title>
   <link rel="stylesheet" href="./base.css">
   <link rel="stylesheet" href="./公用部分.css">
@@ -15,19 +18,27 @@
   <div class="back">返回顶部</div>
   <!-- 头部 -->
   <div class="header">
-    <p>欢迎来到我的首页</p>
-  </div>
-  <div class="shortcut">
-    <div class="w">
-      <ul>
-        <li><a href="./index.html">首页</a></li>
-        <li class="line"></li>
-        <li><a href="./开发日志.html">开发日志</a></li>
-        <li class="line"></li>
-        <li><a href="./关于我们.html">关于我们</a></li>
-        <li class="line"></li>
-        <li><a href="#">我的作品</a></li>
-      </ul>
+    <div class="header-left">
+      <div class="shortcut">
+        <ul>
+          <li><a href="./index.html">首页</a></li>
+          <li class="line"></li>
+          <li><a href="./开发日志.html">开发日志</a></li>
+          <li class="line"></li>
+          <li><a href="./关于我们.html">关于我们</a></li>
+          <li class="line"></li>
+          <li><a href="#">我的作品</a></li>
+        </ul>
+      </div>
+      <p>欢迎来到我的首页</p>
+      <span>我们皆是宇宙散落的星尘，携微光穿梭于时光洪流——所求非尽善尽美，
+        而是敢在未被书写的世界，留下独属于自己的印记。</span>
+      <span>We are all stardust scattered by the cosmos, wandering through time with fragments of
+        light—chasing not perfection, but the courage to leave
+        footprints where the world has not yet been written.</span>
+    </div>
+    <div class="header-right">
+      <img src="./22.jpg" alt="背景图片">
     </div>
   </div>
   <!-- 首页 -->
@@ -35,32 +46,137 @@
 
     <div class="home1">
       <h2>个人介绍</h2>
-      <p>
-        姓名：汤青榕<br>
-        性别：女<br>
-        就读：湖南工商大学<br>
-        手机号：123456789<br>
-        邮箱：1234567@qq.com<br>
-        个人介绍：这是一个人。
-      </p>
+
+      <!-- 教育背景 -->
+      <div class="section">
+        <h3>教育背景</h3>
+        <p class="education">湖南工商大学</p>
+        <p class="gpa">大数据管理与应用</p>
+        <p class="courses">主修课程：数据结构、python程序设计、c语言程序设计</p>
+      </div>
+
+      <!-- 专业技能 -->
+      <div class="section">
+        <h3>专业技能</h3>
+        <div class="skills-container">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C语言</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">API</span>
+          <span class="skill-tag">机器学习</span>
+          <span class="skill-tag">数据分析</span>
+          <span class="skill-tag">Git</span>
+        </div>
+      </div>
+
+      <!-- 语言能力 -->
+      <div class="section">
+        <h3>语言能力</h3>
+        <div class="language-container">
+          <span class="language-tag">中文 (母语)</span>
+          <span class="language-tag">英语 </span>
+        </div>
+      </div>
+
+      <!-- 兴趣爱好 -->
+      <div class="section">
+        <h3>兴趣爱好</h3>
+        <div class="hobby-item">
+          <p class="hobby-title">摄影</p>
+          <p class="hobby-desc">擅长风光和人像摄影，拥有5年摄影经验，喜欢用镜头记录生活中的美好瞬间。</p>
+        </div>
+        <div class="hobby-item">
+          <p class="hobby-title">阅读</p>
+          <p class="hobby-desc">每月阅读3-4本书，偏爱文学和科技类书籍，坚持每天阅读30分钟，经营个人读书博客分享阅读心得。</p>
+        </div>
+        <div class="hobby-item">
+          <p class="hobby-title">旅行</p>
+          <p class="hobby-desc">已游历15个国家，喜欢深度体验当地文化，撰写旅行游记。最难忘的是尼泊尔安纳普尔纳大环线徒步经历。</p>
+        </div>
+        <div class="hobby-item">
+          <p class="hobby-title">健身</p>
+          <p class="hobby-desc">每周健身3次，喜欢跑步和游泳，已完成两次半程马拉松，保持健康的生活方式。</p>
+        </div>
+      </div>
     </div>
 
     <div class="skills-hobbies">
       <div class="home2">
-        <h2>个人技能</h2>
-        <p>
-          1. 会用HTML、CSS、JavaScript等前端技术开发网页。<br>
-          2. 有良好的用户体验设计能力，能够为用户提供良好的交互体验。<br>
-          3. 有良好的沟通能力和团队合作精神，能够与其他开发人员合作开发项目。<br>
-        </p>
+        <h2>我的相册</h2>
+        <div class="photo-gallery">
+          <div class="gallery-item">
+            <img src="./22.jpg" alt="照片1">
+          </div>
+          <div class="gallery-item">
+            <img src="./33.jpg" alt="照片2">
+          </div>
+          <div class="gallery-item">
+            <img src="./44.jpg" alt="照片3">
+          </div>
+          <div class="gallery-item">
+            <img src="./55.jpg" alt="照片4">
+          </div>
+          <div class="gallery-item">
+            <img src="./66.jpg" alt="照片5">
+          </div>
+          <div class="gallery-item">
+            <img src="./77.jpg" alt="照片6">
+          </div>
+          <div class="gallery-item">
+            <img src="./88.jpg" alt="照片7">
+          </div>
+          <div class="gallery-item">
+            <img src="./99.jpg" alt="照片8">
+          </div>
+          <div class="gallery-item">
+            <img src="./10.jpg" alt="照片9">
+          </div>
+        </div>
       </div>
       <div class="home3">
-        <h2>兴趣爱好</h2>
-        <p>
-          1. 喜欢运动，尤其是足球。<br>
-          2. 喜欢旅游，尤其是去新的地方。<br>
-          3. 喜欢阅读，尤其是技术书籍。<br>
-        </p>
+        <!-- 联系信息卡片 -->
+        <div class="contact-card">
+          <h2><i class="contact-icon">📞</i>联系我</h2>
+          <div class="contact-info">
+            <div class="info-item">
+              <span class="info-label">邮箱</span>
+              <span class="info-value">3130397985@qq.com</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">微信</span>
+              <span class="info-value">ttt0507rrrrr</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">地址</span>
+              <span class="info-value">湖南省长沙市</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">GitHub</span>
+              <a href="https://github.com/username" class="info-value github-link">github.com/ttt0507rrrrr</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 消息表单卡片 -->
+        <div class="message-card">
+          <h2><i class="contact-icon">✉️</i>发送消息</h2>
+          <form class="contact-form">
+            <div class="form-group">
+              <input type="text" placeholder="你的名字" class="form-input">
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="你的邮箱" class="form-input">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="消息主题" class="form-input">
+            </div>
+            <div class="form-group">
+              <textarea placeholder="你想对我说的话..." class="form-textarea"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">发送消息 <i>✨</i></button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

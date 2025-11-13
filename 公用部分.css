@@ -29,41 +29,119 @@ html {
 
 /* 头部 */
 .header {
-  background: url(./88.jpg) no-repeat center/cover;
-  height: 300px;
-  padding: 15px 20px;
-  text-align: center;
-  color: rgba(0, 8, 12, 0.8);
-  font-size: 100px;
-  font-weight: bold;
-  letter-spacing: 5px;
-  white-space: nowrap;
-  line-height: 300px;
-  /* 去掉背景图片与盒子的缝隙 */
-  background-clip: padding-box;
+  display: flex;
+  height: 500px;
+  background-color: #fff;
   margin: 0 auto;
+  padding: 0;
+}
+
+.header-left {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.header-left p {
+  color: rgba(0, 8, 12, 0.8);
+  font-size: 45px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.header-left span {
+  display: block;
+  color: #333;
+  font-size: 10px;
+  line-height: 1.8;
+  text-align: center;
+  margin: 5px 0;
+  max-width: 90%;
+  padding: 20px 50px 10px 10px;
+  letter-spacing: 1px;
+}
+
+/* 中文段落样式 */
+.header-left span:first-of-type {
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* 英文段落样式 */
+.header-left span:last-of-type {
+  color: #555;
+  font-size: 15px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.header-right img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .header-right img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-right img {
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
 }
 
 /* 导航栏 */
 .shortcut {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 52px;
-  background-color: #333;
-  z-index: 9999;
+  background-color: #fff;
+  font-size: 21px;
 }
 
 .shortcut ul {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   height: 52px;
+  margin: 0;
+  padding: 0;
 }
 
 .shortcut li a {
-  color: #999;
+  color: #333;
+  text-decoration: none;
 }
 
 .shortcut li a:hover {
@@ -73,7 +151,7 @@ html {
 .shortcut .line {
   height: 12px;
   width: 1px;
-  background-color: #999;
+  background-color: #ccc;
   margin: 0 15px;
 }
 

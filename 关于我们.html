@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>开发日志</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>关于我们</title>
   <link rel="stylesheet" href="./公用部分.css">
   <link rel="stylesheet" href="./base.css">
   <link rel="stylesheet" href="./关于我们.css">
@@ -14,39 +17,66 @@
   <div class="back">返回顶部</div>
   <!-- 头部 -->
   <div class="header">
-    <p>欢迎来到关于我们</p>
-  </div>
-  <div class="shortcut">
-    <div class="w">
-      <ul>
-        <li><a href="./index.html">首页</a></li>
-        <li class="line"></li>
-        <li><a href="./开发日志.html">开发日志</a></li>
-        <li class="line"></li>
-        <li><a href="./关于我们.html">关于我们</a></li>
-        <li class="line"></li>
-        <li><a href="#">我的作品</a></li>
-      </ul>
+    <div class="header-left">
+      <div class="shortcut">
+        <ul>
+          <li><a href="./index.html">首页</a></li>
+          <li class="line"></li>
+          <li><a href="./开发日志.html">开发日志</a></li>
+          <li class="line"></li>
+          <li><a href="./关于我们.html">关于我们</a></li>
+          <li class="line"></li>
+          <li><a href="#">我的作品</a></li>
+        </ul>
+      </div>
+      <p>欢迎来到关于我们</p>
+      <span>我们皆是宇宙散落的星尘，携微光穿梭于时光洪流——所求非尽善尽美，
+        而是敢在未被书写的世界，留下独属于自己的印记。</span>
+      <span>We are all stardust scattered by the cosmos, wandering through time with fragments of
+        light—chasing not perfection, but the courage to leave
+        footprints where the world has not yet been written.</span>
+    </div>
+    <div class="header-right">
+      <img src="./22.jpg" alt="背景图片">
     </div>
   </div>
   <!-- 中部制作 -->
   <div class="content">
     <div class="left">
       <div class="profile-section">
-        <h2>关于我们</h2>
-        <div class="profile-info">
-          <p class="greeting">Hello, 欢迎来到我的个人网页!</p>
-          <p class="name">我是TQR</p>
-          <p class="title">前端开发学习者</p>
+        <div class="profile-card">
+          <div class="avatar-container">
+            <img src="./11.jpg" alt="头像" class="avatar">
+          </div>
+          <h3 class="profile-name">汤青榕</h3>
           <div class="profile-details">
-            <p><strong>爱好：</strong>编程、音乐、阅读</p>
-            <p><strong>目标：</strong>成为优秀的全栈开发者</p>
-            <p><strong>座右铭：</strong>看nt是一辈子的事情</p>
+            <p class="profile-item"><span class="label">学校：</span><span class="value">湖南工商大学</span></p>
+            <p class="profile-item"><span class="label">专业：</span><span class="value">大数据管理与应用</span></p>
+            <p class="profile-item"><span class="label">星座：</span><span class="value">双子座</span></p>
+            <p class="profile-item"><span class="label">爱好：</span><span class="value">看小说、追剧、编程</span></p>
+            <p class="profile-item"><span class="label">家乡：</span><span class="value">湖南省</span></p>
+            <p class="profile-item"><span class="label">联系电话：</span><span class="value">13812345678</span></p>
+            <p class="profile-item"><span class="label">邮箱：</span><span class="value">123456@qq.com</span></p>
+            <p class="profile-item"><span class="label">个人介绍：</span><span
+                class="value">我喜欢学习新的技术，尤其是前端相关的内容。我喜欢和人在一起，和不同的人交流不同的观点。我也喜欢和不同的人合作，共同完成项目。</span></p>
           </div>
         </div>
       </div>
     </div>
     <div class="right">
+      <!-- 学习记录 -->
+      <div class="hobbies-section">
+        <h3>学习记录</h3>
+        <div class="learning-form">
+          <input type="text" id="learningInput" placeholder="输入今天学了什么，例如：学完了CSS Flexbox">
+          <button id="addLearningBtn">提交</button>
+        </div>
+        <div id="learningRecords" class="learning-records">
+          <!-- 学习记录将通过JavaScript动态添加到这里 -->
+          <div class="no-records">暂无学习记录，快来添加吧！</div>
+        </div>
+      </div>
+
       <div class="tech-stack">
         <h3>技能墙</h3>
         <div class="skills-container">
@@ -147,11 +177,11 @@
 
         <!-- 项目经验 -->
         <div class="projects-section">
-          <h3>项目经验</h3>
+          <h3>项目展示</h3>
           <div class="projects-grid">
             <div class="project-card">
-              <h4>个人网页</h4>
-              <p>使用HTML、CSS、JavaScript开发的个人展示网站，包含首页、开发日志和关于我们等页面</p>
+              <h4>小兔鲜实践项目</h4>
+              <p>使用HTML、CSS、JavaScript模拟开发小兔鲜网站，包含首页、注册登录和商品展示等页面</p>
               <div class="project-tags">
                 <span>HTML5</span>
                 <span>CSS3</span>
@@ -159,34 +189,12 @@
               </div>
             </div>
             <div class="project-card">
-              <h4>技能展示墙</h4>
-              <p>使用CSS Grid和Flexbox实现的响应式技能展示组件，展示个人技术栈和掌握程度</p>
+              <h4>个人网页</h4>
+              <p>使用CSS Grid和Flexbox实现的响应式技能展示组件，包含首页、开发日志和关于我们等页面</p>
               <div class="project-tags">
                 <span>CSS3</span>
                 <span>响应式设计</span>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 个人爱好 -->
-        <div class="hobbies-section">
-          <h3>个人爱好</h3>
-          <div class="hobbies-container">
-            <div class="hobby-item">
-              <div class="hobby-icon">📚</div>
-              <div class="hobby-name">阅读</div>
-              <p>喜欢阅读技术书籍和科幻小说，拓宽视野</p>
-            </div>
-            <div class="hobby-item">
-              <div class="hobby-icon">🎵</div>
-              <div class="hobby-name">音乐</div>
-              <p>闲暇时喜欢听音乐、学习乐器，放松心情</p>
-            </div>
-            <div class="hobby-item">
-              <div class="hobby-icon">💻</div>
-              <div class="hobby-name">编程</div>
-              <p>热爱编程，享受解决问题的乐趣</p>
             </div>
           </div>
         </div>
@@ -251,6 +259,96 @@
         backBtn.style.display = 'none';
       }
     });
+
+    // 学习记录功能
+    const learningInput = document.getElementById('learningInput');
+    const addLearningBtn = document.getElementById('addLearningBtn');
+    const learningRecords = document.getElementById('learningRecords');
+    const noRecordsElement = document.querySelector('.no-records');
+
+    // 从本地存储加载学习记录
+    function loadLearningRecords() {
+      const records = JSON.parse(localStorage.getItem('learningRecords')) || [];
+      if (records.length > 0) {
+        noRecordsElement.style.display = 'none';
+        records.forEach(record => {
+          addRecordToDOM(record.date, record.content);
+        });
+      }
+    }
+
+    // 添加记录到DOM
+    function addRecordToDOM(date, content) {
+      const recordElement = document.createElement('div');
+      recordElement.className = 'learning-record-item';
+      recordElement.innerHTML = `
+        <span class="record-date">${date}</span>
+        <span class="record-content">${content}</span>
+        <button class="delete-record">删除</button>
+      `;
+
+      // 添加删除功能
+      const deleteBtn = recordElement.querySelector('.delete-record');
+      deleteBtn.addEventListener('click', function () {
+        learningRecords.removeChild(recordElement);
+
+        // 更新本地存储
+        const records = JSON.parse(localStorage.getItem('learningRecords')) || [];
+        const updatedRecords = records.filter(record =>
+          !(record.date === date && record.content === content)
+        );
+        localStorage.setItem('learningRecords', JSON.stringify(updatedRecords));
+
+        // 如果没有记录了，显示提示信息
+        if (updatedRecords.length === 0) {
+          noRecordsElement.style.display = 'block';
+        }
+      });
+
+      learningRecords.insertBefore(recordElement, learningRecords.firstChild);
+    }
+
+    // 添加新记录
+    function addNewRecord() {
+      const content = learningInput.value.trim();
+      if (content === '') {
+        alert('请输入学习内容！');
+        return;
+      }
+
+      // 获取当前日期
+      const now = new Date();
+      const dateStr = now.getFullYear() + '-' +
+        String(now.getMonth() + 1).padStart(2, '0') + '-' +
+        String(now.getDate()).padStart(2, '0');
+
+      // 隐藏无记录提示
+      noRecordsElement.style.display = 'none';
+
+      // 添加到DOM
+      addRecordToDOM(dateStr, content);
+
+      // 保存到本地存储
+      const records = JSON.parse(localStorage.getItem('learningRecords')) || [];
+      records.unshift({ date: dateStr, content: content });
+      localStorage.setItem('learningRecords', JSON.stringify(records));
+
+      // 清空输入框
+      learningInput.value = '';
+    }
+
+    // 事件监听
+    addLearningBtn.addEventListener('click', addNewRecord);
+
+    // 按回车键也可以添加
+    learningInput.addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        addNewRecord();
+      }
+    });
+
+    // 页面加载时加载记录
+    window.addEventListener('load', loadLearningRecords);
   </script>
 </body>
 

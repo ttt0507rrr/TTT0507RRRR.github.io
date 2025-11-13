@@ -19,6 +19,7 @@ html {
   /* 默认显示 */
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 
 .back:hover {
@@ -31,58 +32,365 @@ html {
 .home {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 0;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   background-color: #f5f5f5;
-  /* 浅灰色背景替代纯白 */
   min-height: 100vh;
+  width: 100%;
+  max-width: 1400px;
 }
 
 /* 个人介绍 - 全屏宽度 */
 .home .home1 {
   width: 100%;
+  max-width: 1400px;
   background-color: #fff;
-  padding: 60px 40px;
+  padding: 60px 50px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   border-radius: 0;
   position: relative;
   overflow: hidden;
+  margin: 0 auto;
+  border-bottom: 3px solid #5EB69C;
 }
 
 /* 技能和爱好组合区域 */
 .home .skills-hobbies {
   display: flex;
-  gap: 30px;
-  padding: 0 40px 60px;
+  gap: 0;
+  padding: 0;
   justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  margin-top: -30px;
+  width: 100%;
 }
 
-/* 技能部分 - 占1/2宽度 */
+/* 相册部分 - 占1/2宽度 */
 .home .home2 {
-  flex: 1;
+  flex: 1.4;
   background-color: #fff;
-  padding: 40px;
-  border-radius: 12px;
+  padding: 50px 40px 40px;
+  border-radius: 12px 12px 0 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   min-height: 400px;
   text-align: center;
+  min-width: 300px;
+  width: calc(100% - 20px);
+  max-width: 700px;
+  margin: 30px 10px 0;
+  border-bottom: 1px solid #eaeaea;
 }
 
-/* 爱好部分 - 占1/2宽度 */
+/* 相册标题样式 */
+.home .home2 h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.home .home2 h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #5EB69C;
+}
+
+/* 相册网格布局 */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+/* 相册项样式 */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  aspect-ratio: 1 / 1;
+  background-color: #f8f8f8;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 图片样式 */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* 图片文字说明样式 */
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.gallery-item:hover .photo-caption {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* 响应式设计 - 中等屏幕 */
+@media (max-width: 992px) {
+  .photo-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .home .home2 {
+    padding: 30px;
+  }
+}
+
+/* 响应式设计 - 平板设备 */
+@media (max-width: 768px) {
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .home .home2 {
+    padding: 20px;
+  }
+
+  .home .home2 h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .home .home2 h2::after {
+    width: 60px;
+    height: 2px;
+  }
+
+  .photo-caption {
+    font-size: 11px;
+    padding: 8px;
+  }
+}
+
+/* 响应式设计 - 移动设备 */
+@media (max-width: 480px) {
+  .photo-gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 4/3;
+  }
+
+  .home .home2 h2 {
+    font-size: 20px;
+  }
+}
+
+/* 联系部分 - 占1/2宽度 */
 .home .home3 {
   flex: 1;
   background-color: #fff;
-  padding: 40px;
-  border-radius: 12px;
+  padding: 50px 40px 40px;
+  border-radius: 0 0 12px 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   min-height: 400px;
+  min-width: 300px;
+  width: calc(100% - 20px);
+  max-width: 700px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 0 10px 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+  .home .home3 {
+    padding: 50px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .contact-card,
+  .message-card {
+    width: 100%;
+  }
+
+  .home .home3 {
+    padding: 40px 20px;
+    gap: 20px;
+  }
+}
+
+/* 联系卡片样式 */
+.contact-card,
+.message-card {
+  width: calc(50% - 15px);
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover,
+.message-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card h2,
+.message-card h2 {
   text-align: center;
-  margin: 0 auto;
-  /* line-height: 1.5; */
+  margin-bottom: 25px;
+  font-size: 24px;
+  color: #333;
+  position: relative;
+}
+
+.contact-card h2::after,
+.message-card h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #5EB69C;
+  margin: 15px auto 0;
+}
+
+.contact-icon {
+  margin-right: 10px;
+  font-style: normal;
+}
+
+/* 联系信息样式 */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.info-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 16px;
+  color: #333;
+  word-break: break-all;
+}
+
+.github-link {
+  color: #5EB69C;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.github-link:hover {
+  color: #4CAF50;
+  text-decoration: underline;
+}
+
+/* 表单样式 */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #5EB69C;
+  box-shadow: 0 0 0 2px rgba(94, 182, 156, 0.2);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #1976D2;
+}
+
+.submit-btn i {
+  font-style: normal;
+  margin-left: 5px;
 }
 
 /* 标题样式 */
@@ -96,7 +404,6 @@ html {
   line-height: 1.5;
   margin-bottom: 30px;
   color: #333;
-  /* 深灰色替代纯黑 */
   position: relative;
   padding-bottom: 15px;
 }
@@ -113,7 +420,6 @@ html {
   width: 60px;
   height: 3px;
   background-color: #5EB69C;
-  /* 绿色装饰线 */
   border-radius: 3px;
 }
 
@@ -123,13 +429,155 @@ html {
 .home .home3 p {
   text-align: center;
   color: #555;
-  /* 中灰色文字 */
   font-size: 18px;
   line-height: 1.8;
   margin: 0;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* 新增样式 - 个人介绍部分 */
+.home .home1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px;
+}
+
+/* 每个section的样式 */
+.home .home1 .section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.home .home1 .section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* h3标题样式 */
+.home .home1 .section h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 25px;
+}
+
+.home .home1 .section h3::before {
+  content: '|';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #5EB69C;
+  font-size: 24px;
+}
+
+/* 教育背景样式 */
+.home .home1 .education {
+  font-weight: 500;
+  font-size: 19px;
+  margin-bottom: 10px !important;
+}
+
+.home .home1 .gpa {
+  color: #5EB69C;
+  font-weight: 500;
+  margin-bottom: 10px !important;
+}
+
+.home .home1 .courses {
+  font-size: 17px !important;
+  text-align: left !important;
+  max-width: 100% !important;
+}
+
+/* 技能标签容器 */
+.home .home1 .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* 技能标签样式 */
+.home .home1 .skill-tag {
+  background-color: #f0f9f6;
+  color: #5EB69C;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #e0f2ed;
+  box-sizing: border-box;
+}
+
+.home .home1 .skill-tag:hover {
+  background-color: #5EB69C;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(94, 182, 156, 0.3);
+}
+
+/* 语言能力容器 */
+.home .home1 .language-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* 语言标签样式 */
+.home .home1 .language-tag {
+  background-color: #f5f5f5;
+  color: #555;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.home .home1 .language-tag:hover {
+  background-color: #5EB69C;
+  color: white;
+  border-color: #5EB69C;
+}
+
+/* 兴趣爱好项目 */
+.home .home1 .hobby-item {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.home .home1 .hobby-item:last-child {
+  margin-bottom: 0;
+}
+
+/* 兴趣爱好标题 */
+.home .home1 .hobby-title {
+  font-weight: 600;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px !important;
+  text-align: left !important;
+}
+
+/* 兴趣爱好描述 */
+.home .home1 .hobby-desc {
+  font-size: 16px !important;
+  line-height: 1.7;
+  text-align: left !important;
+  max-width: 100% !important;
+  color: #666;
 }
 
 /* 悬停效果 */
@@ -140,44 +588,403 @@ html {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-@media (max-width: 1200px) {
-  .home {
-    flex-direction: column;
-    align-items: center;
+/* 超大屏幕 - 1600px以上 */
+@media (min-width: 1600px) {
+  .home .home1 {
+    max-width: 1400px;
+    padding: 80px 60px;
   }
 
-  .home .home1,
   .home .home2,
   .home .home3 {
-    width: 80%;
-    margin-bottom: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .home {
-    padding: 20px 10px;
-    gap: 20px;
-  }
-
-  .home .home1,
-  .home .home2,
-  .home .home3 {
-    width: 95%;
-    min-height: 500px;
-    padding: 20px;
+    max-width: 800px;
+    padding: 60px 50px;
   }
 
   .home .home1 h2,
   .home .home2 h2,
   .home .home3 h2 {
-    font-size: 28px;
-    padding: 30px 0;
+    font-size: 32px;
+  }
+}
+
+/* 桌面端大屏幕 */
+@media (min-width: 1200px) and (max-width: 1599px) {
+
+  .home .home2,
+  .home .home3 {
+    max-width: calc(50% - 10px);
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .home .home2 {
+    border-radius: 12px 0 0 0;
+    border-right: 1px solid #eaeaea;
+  }
+
+  .home .home3 {
+    border-radius: 0 12px 0 0;
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+
+  .home .skills-hobbies {
+    margin-top: -40px;
+    padding: 0 20px;
+  }
+}
+
+/* 中等屏幕 - 平板横向 */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .home .skills-hobbies {
+    padding: 0 20px;
+    margin-top: -30px;
+  }
+
+  .home .home1 {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    margin-bottom: 0;
+  }
+
+  .home .home2,
+  .home .home3 {
+    width: calc(50% - 10px);
+    margin: 30px 5px 0;
+  }
+
+  .home .home2 {
+    border-radius: 12px 0 0 0;
+    border-right: 1px solid #eaeaea;
+  }
+
+  .home .home3 {
+    border-radius: 0 12px 0 0;
+    margin-bottom: 0;
+  }
+
+  .home .home1 h2,
+  .home .home2 h2,
+  .home .home3 h2 {
+    font-size: 26px;
   }
 
   .home .home1 p,
   .home .home2 p,
   .home .home3 p {
+    font-size: 17px;
+  }
+
+  /* 调整个人介绍section间距 */
+  .home .home1 .section {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+  }
+
+  /* 调整技能标签大小 */
+  .home .home1 .skill-tag,
+  .home .home1 .language-tag {
+    padding: 7px 14px;
+    font-size: 15px;
+  }
+}
+
+/* 平板端 */
+@media (max-width: 991px) and (min-width: 768px) {
+  .home .skills-hobbies {
+    flex-direction: column;
+    padding: 0 20px;
+    margin-top: -20px;
+  }
+
+  .home .home1 {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    padding: 40px 30px;
+    margin-bottom: 0;
+  }
+
+  .home .home2 {
+    width: calc(100% - 40px);
+    margin: 20px 20px 0;
+    padding: 40px 30px 30px;
+    min-height: auto;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .home .home3 {
+    width: calc(100% - 40px);
+    margin: 0 20px 30px;
+    padding: 30px;
+    min-height: auto;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .home .home1 h2,
+  .home .home2 h2,
+  .home .home3 h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .home .home1 p,
+  .home .home2 p,
+  .home .home3 p {
+    font-size: 16px;
+  }
+
+  /* 调整联系卡片布局 */
+  .contact-card,
+  .message-card {
+    width: 100%;
+  }
+
+  /* 调整相册网格 */
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 调整个人介绍内部元素 */
+  .home .home1 .section h3 {
+    font-size: 20px;
+  }
+
+  .home .home1 .hobby-title {
+    font-size: 17px;
+  }
+
+  .home .home1 .hobby-desc {
+    font-size: 15px !important;
+  }
+}
+
+/* 小平板 - 640px到767px */
+@media (max-width: 767px) and (min-width: 640px) {
+  .back {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 13px;
+    background-color: #ccc;
+    right: 15px;
+    bottom: 30px;
+  }
+
+  .home {
+    padding: 0;
+    gap: 0;
+  }
+
+  .home .home1 {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    padding: 35px 25px;
+    margin-bottom: 0;
+  }
+
+  .home .skills-hobbies {
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 0;
+    margin-top: -10px;
+  }
+
+  .home .home2 {
+    width: calc(100% - 30px);
+    margin: 15px 15px 0;
+    min-height: auto;
+    padding: 35px 25px 25px;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .home .home3 {
+    width: calc(100% - 30px);
+    margin: 0 15px 0;
+    min-height: auto;
+    padding: 25px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  /* 调整相册网格 */
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* 调整个人介绍元素大小 */
+  .home .home1 .skill-tag,
+  .home .home1 .language-tag {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .home .home1 .section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+}
+
+/* 移动端 */
+@media (max-width: 639px) {
+  .back {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 12px;
+    right: 10px;
+    bottom: 20px;
+    background-color: #ccc;
+  }
+
+  .home {
+    padding: 0;
+    gap: 0;
+  }
+
+  .home .home1 {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    padding: 30px 15px;
+    margin-bottom: 0;
+  }
+
+  .home .skills-hobbies {
+    flex-direction: column;
+    padding: 0 10px;
+    gap: 0;
+    margin-top: -10px;
+  }
+
+  .home .home2 {
+    width: calc(100% - 20px);
+    margin: 10px 10px 0;
+    min-height: auto;
+    padding: 30px 15px 20px;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .home .home3 {
+    width: calc(100% - 20px);
+    margin: 0 10px 0;
+    min-height: auto;
+    padding: 20px 15px;
+    border-radius: 0 0 12px 12px;
+    gap: 20px;
+  }
+
+  .home .home1 h2,
+  .home .home2 h2,
+  .home .home3 h2 {
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+
+  .home .home1 p,
+  .home .home2 p,
+  .home .home3 p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* 相册调整为单列 */
+  .photo-gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 4/3;
+  }
+
+  /* 联系卡片调整 */
+  .contact-card,
+  .message-card {
+    width: 100%;
+    padding: 20px 15px;
+  }
+
+  /* 表单调整 */
+  .form-input,
+  .form-textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  /* 个人介绍内部元素调整 */
+  .home .home1 .section h3 {
     font-size: 18px;
+    padding-left: 20px;
+  }
+
+  .home .home1 .section h3::before {
+    font-size: 20px;
+  }
+
+  .home .home1 .skill-tag,
+  .home .home1 .language-tag {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  .home .home1 .hobby-title {
+    font-size: 16px;
+  }
+
+  .home .home1 .hobby-desc {
+    font-size: 14px !important;
+  }
+
+  .home .home1 .section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+  }
+
+  /* 标题下方装饰线调整 */
+  .home .home1 h2::after,
+  .home .home2 h2::after,
+  .home .home3 h2::after {
+    width: 30px;
+    height: 2px;
+  }
+}
+
+/* 小屏幕手机 - 360px以下 */
+@media (max-width: 359px) {
+  .home .home1 {
+    padding: 25px 10px;
+    width: calc(100% - 10px);
+    margin: 0 5px;
+  }
+
+  .home .home2 {
+    padding: 25px 10px 15px;
+  }
+
+  .home .home3 {
+    padding: 15px 10px;
+  }
+
+  .home .home1 h2,
+  .home .home2 h2,
+  .home .home3 h2 {
+    font-size: 18px;
+  }
+
+  .home .home1 .skill-tag,
+  .home .home1 .language-tag {
+    padding: 4px 8px;
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .home .home1 .skills-container,
+  .home .home1 .language-container {
+    gap: 8px;
   }
 }

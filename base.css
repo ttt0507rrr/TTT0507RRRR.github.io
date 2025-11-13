@@ -10,6 +10,9 @@ body {
   font: 16px/1 "Microsoft Yahei",
     "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
   color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* 去除列表默认样式 */
@@ -28,11 +31,14 @@ i {
 a {
   text-decoration: none;
   color: #333;
+  transition: color 0.3s ease;
 }
 
 /* 设置img的垂直对齐方式为居中对齐，去除img默认下间隙 */
 img {
   vertical-align: middle;
+  max-width: 100%;
+  height: auto;
 }
 
 /* 去除input默认样式 */
@@ -40,6 +46,7 @@ input {
   border: none;
   outline: none;
   color: #333;
+  font-family: inherit;
 }
 
 h1,
@@ -49,4 +56,47 @@ h4,
 h5,
 h6 {
   font-weight: 400;
+}
+
+/* 全局容器类 */
+.w {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 移动端优先的响应式设置 */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .w {
+    padding: 0 15px;
+  }
+  
+  /* 防止移动端点击延迟 */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* 优化移动端文本选择 */
+  p, span, a, h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+  }
+}
+
+/* 平板设备 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .w {
+    padding: 0 30px;
+  }
+}
+
+/* 大型设备 */
+@media (min-width: 1200px) {
+  .w {
+    padding: 0;
+  }
 }

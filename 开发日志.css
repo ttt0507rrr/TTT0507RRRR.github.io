@@ -7,32 +7,34 @@
 
 .log .w {
   position: relative;
-  min-height: 600px;
+  min-height: 400px;
+  left: 20px;
+  /* 减小最小高度，让内容决定整体高度 */
 }
 
 /* 竖着排列的标题 */
 .log .w h2 {
   position: absolute;
-  left: 30px;
+  left: -40px;
   top: 25%;
   transform: translateY(-50%);
   writing-mode: vertical-rl;
   text-orientation: upright;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   color: #333;
   margin: 0;
-  padding: 15px 10px;
+  padding: 25px 8px;
   background-color: #f5f5f5;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  letter-spacing: 5px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  letter-spacing: 8px;
 }
 
 /* 容器布局 */
 .log-container {
-  margin-left: 80px;
+  margin-left: 120px;
   display: flex;
   gap: 30px;
   padding: 20px 0;
@@ -43,7 +45,8 @@
   flex: 1.5;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+  /* 减小与开发日志的间隔 */
 }
 
 /* 右侧问题内容 */
@@ -98,6 +101,8 @@
 .log-content {
   flex: 1;
   padding: 0 10px;
+  min-height: auto;
+  /* 确保能随着内容增加而变大 */
 }
 
 /* 项目内容样式 */
@@ -108,9 +113,8 @@
   border-radius: 8px;
   padding: 25px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-height: 400px;
-  /* 限制最大高度 */
-  overflow-y: auto;
+  min-height: auto;
+  /* 自适应内容高度 */
 }
 
 .projects-content h3 {
@@ -157,7 +161,8 @@
 .log .w .box2,
 .log .w .box3,
 .log .w .box4,
-.log .w .box5 {
+.log .w .box5,
+.log .w .box6 {
   width: 100%;
   min-height: 80px;
   background-color: #f5f5f5;
@@ -185,22 +190,295 @@
   background-color: #fff;
 }
 
-/* 调整响应式布局 */
-@media (max-width: 768px) {
+/* 响应式设计 */
+
+/* 大屏幕设备 (≥ 1600px) */
+@media (min-width: 1600px) {
+  .log .w {
+    max-width: 1400px;
+    margin: 0 auto;
+    left: 0;
+  }
+
   .log-container {
-    flex-direction: column;
-    margin-left: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+}
+
+/* 桌面端大屏幕 (1200px - 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .log-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+}
+
+/* 中等屏幕 - 平板横向 (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .log-container {
+    padding: 30px;
+    gap: 25px;
+    margin-left: 100px;
+  }
+
+  .log .w {
+    left: 15px;
   }
 
   .log .w h2 {
-    position: relative;
-    transform: none;
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 24px;
+    padding: 15px;
   }
 
+  .log .w .box1,
+  .log .w .box2,
+  .log .w .box3,
+  .log .w .box4,
+  .log .w .box5 {
+    padding: 20px;
+  }
+}
+
+/* 平板端 (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .log-container {
+    flex-direction: column;
+    padding: 25px 20px;
+    gap: 20px;
+    margin-left: 0;
+  }
+
+  .log .w {
+    left: 0;
+  }
+
+  .log .w h2 {
+    writing-mode: horizontal-tb;
+    left: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+    font-size: 26px;
+    padding: 12px;
+    text-align: center;
+    position: relative;
+    transform: none;
+  }
+
+  .left-column {
+    margin-bottom: 15px;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .projects-content,
+  .problems-content {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .log .w .box1,
+  .log .w .box2,
+  .log .w .box3,
+  .log .w .box4,
+  .log .w .box5 {
+    padding: 18px;
+    margin-bottom: 15px;
+  }
+
+  .problems-content {
+    padding: 20px;
+  }
+
+  .problem-item {
+    margin-bottom: 18px;
+  }
+
+  .problem-item h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .problem-item p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+/* 小平板设备 (640px - 767px) */
+@media (max-width: 767px) {
   .log {
-    padding: 20px 0;
-    margin: 15px 0;
+    margin: 0;
+    padding: 15px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .log-container {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+    margin-left: 0;
+  }
+
+  .log .w {
+    left: 0;
+  }
+
+  .log .w h2 {
+    writing-mode: horizontal-tb;
+    left: 0;
+    margin-right: 0;
+    margin-bottom: 15px;
+    font-size: 24px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    transform: none;
+    background-color: #5EB69C;
+    color: white;
+    border-radius: 8px;
+  }
+
+  .left-column {
+    margin-bottom: 0;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .log .w .box1,
+  .log .w .box2,
+  .log .w .box3,
+  .log .w .box4,
+  .log .w .box5 {
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .log .w .box1:hover,
+  .log .w .box2:hover,
+  .log .w .box3:hover,
+  .log .w .box4:hover,
+  .log .w .box5:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .problems-content {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+
+  .problem-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .problem-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .problem-item h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  .problem-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  .projects-content {
+    max-height: 300px;
+  }
+}
+
+/* 手机设备 (≤ 639px) */
+@media (max-width: 639px) {
+  .log {
+    padding: 10px 0;
+  }
+
+  .log-container {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .log .w h2 {
+    font-size: 20px;
+    padding: 8px;
+    margin-bottom: 12px;
+  }
+
+  .log .w .box1,
+  .log .w .box2,
+  .log .w .box3,
+  .log .w .box4,
+  .log .w .box5 {
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .problems-content,
+  .projects-content {
+    padding: 12px;
+  }
+
+  .problems-content h3,
+  .projects-content h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .problem-item h4,
+  .project-item h4 {
+    font-size: 15px;
+  }
+
+  .problem-item p,
+  .project-item p {
+    font-size: 13px;
+  }
+}
+
+/* 小屏幕手机设备 (≤ 359px) */
+@media (max-width: 359px) {
+  .log .w h2 {
+    font-size: 18px;
+  }
+
+  .log .w .box1,
+  .log .w .box2,
+  .log .w .box3,
+  .log .w .box4,
+  .log .w .box5 {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .problems-content h3,
+  .projects-content h3 {
+    font-size: 16px;
+  }
+
+  .problem-item h4,
+  .project-item h4 {
+    font-size: 14px;
+  }
+
+  .problem-item p,
+  .project-item p {
+    font-size: 12px;
   }
 }
